@@ -12,6 +12,22 @@ v = Val(1)
 print(v)
 assert v.eval() == 1
 
+class Add(object):
+    __slots__=['left', 'right']
+    def __init__(self, a, b):
+        self.left = a
+        self.right = b
+    def eval(self):
+        return self.left.eval() + self.right.eval()
+
+e = Add(Val(1), Val(2))  # 1+2
+print(e.eval())
+assert e.eval() == 3
+
+#次のステップ 1+2+3 ==> 6
+
+e = Add(Val(1),Add(Val(2),Val(3)))
+print(e.eval())
 
 
 print()
