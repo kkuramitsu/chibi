@@ -12,7 +12,7 @@ class Val(Expr):
         return self.value
 
 v = Val(1)
-print(v)
+#print(v)
 assert v.eval() == 1
 
 assert isinstance(v, Expr) # ==> True
@@ -33,14 +33,10 @@ class Add(Expr):
         return self.left.eval() + self.right.eval()
 
 e = Add(1,Add(1,2))
-print(e.eval())
+#print(e.eval())
 assert e.eval() == 4
 
 
 e = Add(Val(1),Add(Val(2),Val(3)))
 assert e.eval() == 6
 
-#次のステップ 
-
-print()
-print()
