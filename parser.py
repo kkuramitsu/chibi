@@ -13,7 +13,6 @@ def parse(s: str):
         return Mul(parse(s1), parse(s2))
     return Val(int(s))
 
-e = parse("1*2+3")
-print(e, e.eval())
-e = parse("1+2*3")
-print(e, e.eval())
+e = parse("1-2-3")
+print(e, e.eval())   # -4
+assert e.eval() == -4
